@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: black;
+  color: white;
+  font-family: "Open Sans", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  text-align: center;
+  color: gold;
+  padding: 1em;
+}
+
+nav > ul {
+  list-style: none;
+}
+
+.documentation {
+  flex: 1;
+  display: flex;
+  margin-bottom: 1em;
+}
+
+.documentation > nav {
+  flex: 1.5;
+  border: 2px solid white;
+  margin: 0 1em;
+  border-collapse: collapse;
+}
+
+.documentation > .section {
+  flex: 5;
+  border: 2px solid white;
+  margin-right: 1em;
+}
+
+.link {
+  font-size: 1rem;
+  padding: 0.4em 1em;
+}
+
+.link:hover:not(.active) {
+  color: gold;
+  cursor: pointer;
+}
+
+.doc {
+  width: 100%;
+  padding: 1em 2em;
+  display: none;
+}
+
+h2 {
+  margin-bottom: 0.5em;
+  color: goldenrod;
+}
+
+p {
+  margin-bottom: 1em;
+  text-align: justify;
+}
+
+.doc > ul {
+  padding: 0.5em 4em;
+  padding-right: 0;
+}
+
+.doc li {
+  margin-bottom: 1em;
+  text-align: justify;
+}
+
+.note {
+  color: white;
+  width: 10em;
+  font-size: 0.6rem;
+  position: absolute;
+  padding: 1em;
+  right: 1em;
+  top: 1em;
+  text-align: center;
+}
+
+@media screen and (min-width: 750px) {
+  .note:hover {
+    transform: scale(1.5);
+    cursor: crosshair;
+    right: 3em;
+    top: 2em;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .documentation {
+    flex-direction: column;
+  }
+
+  .documentation > .section {
+    margin: 1em;
+  }
+
+  .note {
+    display: none;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.link.active {
+  background: gold;
+  color: black;
+}
+
+.doc.active {
+  display: block;
+}
